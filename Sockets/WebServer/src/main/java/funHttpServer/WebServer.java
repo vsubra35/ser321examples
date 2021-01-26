@@ -22,9 +22,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
+
+import com.google.gson.JsonArray;
+
 import java.util.Map;
 import java.util.LinkedHashMap;
 import java.nio.charset.Charset;
+import org.json.*;
 
 class WebServer {
   public static void main(String args[]) {
@@ -216,6 +220,12 @@ class WebServer {
 
           // TODO: Include error handling here with a correct error code and
           // a response that makes sense
+              if( num1 == null || num2 == null){
+                System.out.println("Not enough parameters to multipl\n");
+                builder.append("HTTP/1.1 400 Bad Request\n");
+                builder.append("Content-Type: text/html; charset=utf-8\n");
+                builder.append("\n");
+              }
 
         } else if (request.contains("github?")) {
           // pulls the query from the request and runs it with GitHub's REST API
@@ -229,7 +239,7 @@ class WebServer {
           Map<String, String> query_pairs = new LinkedHashMap<String, String>();
           query_pairs = splitQuery(request.replace("github?", ""));
           String json = fetchURL("https://api.github.com/" + query_pairs.get("query"));
-          System.out.println(json);
+          //System.out.println(json);
 
           builder.append("Check the todos mentioned in the Java source file");
           // TODO: Parse the JSON returned by your fetch and create an appropriate
@@ -238,6 +248,23 @@ class WebServer {
           // amehlhase, 46384989 -> memoranda
           // amehlhase, 46384989 -> ser316examples
           // amehlhase, 46384989 -> test316
+          JSONArray branchInfo = new JSONArray(json);
+          for(int j=0; j<branchInfo.length(); j++){
+            System.out.println(branchInfo.getJSONObject(j).getString("name"));
+            JSONObject owner = branchInfo.getJSONObject(j).getJSONObject("owner");
+            System.out.println(owner.getString("login"));
+            System.out.println(owner.get("id"));
+            builder.append(branchInfo.getJSONObject(j).getString("name"));
+            builder.append(owner.getString("login"));
+            builder.append(owner.get("id"));
+            
+           // System.out.println(branchInfo.getJSONObject(j).getJSONObject("owner").getString("login"));
+         }
+
+
+
+
+
 
         } else {
           // if the request is not recognized at all
