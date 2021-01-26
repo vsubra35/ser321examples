@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apply plugin: 'java'
 
 description = "TCP Client Server Example"
@@ -20,3 +21,31 @@ task runServer(type: JavaExec) {
   args '9099' // port
   args '9' // delay
 }
+=======
+apply plugin: 'java'
+
+description = "TCP Client Server Example"
+
+// gradle ruClient
+// gradle runClient --args='localhost 8000 "Hello there"'
+task runClient(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+  description = "Run Client"
+  main = 'TCPClient'
+  // default args
+  args 'localhost' // host
+  args '9099' // port
+  args 'This is line one.\nThis is line two' // data
+}
+
+// gradle runServer
+// gradle runServer --args='8000 1'
+task runServer(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+  description = "Run Server"
+  main = 'TCPServer'
+  // default args
+  args '9099' // port
+  args '9' // delay
+}
+>>>>>>> d49c65be412094b4d8c809d39820453954fdfcef

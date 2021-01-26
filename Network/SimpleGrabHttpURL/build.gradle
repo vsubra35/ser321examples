@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 application {
     mainClassName = 'SimpleGrabHttpURL'
     description = "SimpleGrabHttpURL Example"
@@ -7,3 +8,16 @@ run {
   // default arguments
   args 'https://devhints.io/bash' // url
 }
+=======
+apply plugin: 'application'
+
+application {
+    mainClassName = 'SimpleGrabHttpURL'
+    description = "SimpleGrabHttpURL Example"
+}
+
+run {
+  // default arguments
+  args 'https://devhints.io/bash' // url
+}
+>>>>>>> d49c65be412094b4d8c809d39820453954fdfcef

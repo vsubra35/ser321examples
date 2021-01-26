@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Purpose: demonstrate simple Java command line compilation and
 debugging, and using Gradle to build and run Java, to use arguments etc. 
 
@@ -37,3 +38,19 @@ run                    // the program will break at the first line
                        // list [lineNO | method]    List 10 lines of source starting -4
 
 
+=======
+## Purpose: 
+
+Shows how to work with JSON and doing simple API calls though Java to GitHub and evaluating the data. 
+
+# Running with Gradle#
+Included in the project directory is a Gradle build file: build.gradle
+
+In your command line go to the folder where the build.gradle file is located. 
+Run 'gradle tasks --all' it will show you all available tasks and their description. 
+Especially important: build, clean, run, API
+
+You can run it through
+
+gradle API
+>>>>>>> d49c65be412094b4d8c809d39820453954fdfcef

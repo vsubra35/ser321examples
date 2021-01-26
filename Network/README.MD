@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Running the examples #
 This is a multi project gradle setup. 
 
@@ -41,3 +42,9 @@ JsonRPCviaTCPStudent
     -gradle JsonRPCviaTCPStudent:runServer --args '9099'
   -gradle JsonRPCviaTCPStudent:runClient
     -gradle JsonRPCviaTCPStudent:runClient --args 'localhost 9099'
+=======
+# Running the examples #
+This folder contains simple little toy examples about networking. 
+
+Each project has its own Gradle file and Readme, please check these for further information on the projects. 
+>>>>>>> d49c65be412094b4d8c809d39820453954fdfcef

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Running the examples #
 This is a multi project gradle setup. 
 
@@ -75,3 +76,10 @@ SimpleInterop
 WebServer
   - gradle WebServer:SimpleWebServer
   - gradle WebServer:FunWebServer
+=======
+# Running the examples #
+
+These projects are related to sockets and protocols. 
+
+Each project has its own Gradle file and Readme, please check these for further information on the projects. 
+>>>>>>> d49c65be412094b4d8c809d39820453954fdfcef

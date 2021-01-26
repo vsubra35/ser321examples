@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // set as java application
 apply plugin: 'application'
 //define main class
@@ -84,3 +85,32 @@ task MysteryWhyWebClient(type: JavaExec) {
   standardInput = System.in
 }
 
+=======
+// set as java application
+apply plugin: 'application'
+
+//define main class
+mainClassName = 'SimpleServer'
+
+task SimpleWebServer(type: JavaExec) {
+  group 'http'
+  description 'Simple Http Demo'
+
+  classpath = sourceSets.main.runtimeClasspath
+
+  main = 'httpServer.WebServer'
+  standardInput = System.in
+}
+
+task FunWebServer(type: JavaExec) {
+  group 'http'
+  description 'Simple Http Demo'
+
+  classpath = sourceSets.main.runtimeClasspath
+
+  main = 'funHttpServer.WebServer'
+  standardInput = System.in
+}
+
+
+>>>>>>> d49c65be412094b4d8c809d39820453954fdfcef
