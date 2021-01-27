@@ -249,16 +249,20 @@ class WebServer {
           // amehlhase, 46384989 -> ser316examples
           // amehlhase, 46384989 -> test316
           JSONArray branchInfo = new JSONArray(json);
+          JSONObject owner;
+          String name=null;
+          String login=null;
+          String id=null;
           for(int j=0; j<branchInfo.length(); j++){
             System.out.println(branchInfo.getJSONObject(j).getString("name"));
-            JSONObject owner = branchInfo.getJSONObject(j).getJSONObject("owner");
+             owner = branchInfo.getJSONObject(j).getJSONObject("owner");
             System.out.println(owner.getString("login"));
             System.out.println(owner.get("id"));  
-            String name =branchInfo.getJSONObject(j).getString("name");
-            String login =owner.getString("login");
-            String id = owner.get("id").toString();
+             name =branchInfo.getJSONObject(j).getString("name");
+             login =owner.getString("login");
+             id = owner.get("id").toString();
            // String name= branchInfo.getJSONObject(j).getString("name");
-
+          }
 
             builder.append("HTTP/1.1 200 OK\n");
             builder.append("Content-Type: text/html; charset=utf-8\n");
@@ -268,7 +272,7 @@ class WebServer {
             builder.append("id is:"+ id);
   
            // System.out.println(branchInfo.getJSONObject(j).getJSONObject("owner").getString("login"));
-          }
+          
 
 
 
