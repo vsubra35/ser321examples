@@ -270,12 +270,12 @@ class WebServer {
             builder.append("id is:"+ id);
           }
 
-            builder.append("HTTP/1.1 200 OK\n");
-            builder.append("Content-Type: text/html; charset=utf-8\n");
-            builder.append("\n");
-            builder.append("name is:" + name);
-            builder.append("login is:" + login);
-            builder.append("id is:"+ id);
+            // builder.append("HTTP/1.1 200 OK\n");
+            // builder.append("Content-Type: text/html; charset=utf-8\n");
+            // builder.append("\n");
+            // builder.append("name is:" + name);
+            // builder.append("login is:" + login);
+            // builder.append("id is:"+ id);
   
            // System.out.println(branchInfo.getJSONObject(j).getJSONObject("owner").getString("login"));
         
