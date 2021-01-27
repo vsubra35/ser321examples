@@ -253,18 +253,20 @@ class WebServer {
             System.out.println(branchInfo.getJSONObject(j).getString("name"));
             JSONObject owner = branchInfo.getJSONObject(j).getJSONObject("owner");
             System.out.println(owner.getString("login"));
-            System.out.println(owner.get("id"));
-          
+            System.out.println(owner.get("id"));  
+            String name =branchInfo.getJSONObject(j).getString("name");
+            String login =owner.getString("login");
+            String id = (String)owner.get("id");
            // String name= branchInfo.getJSONObject(j).getString("name");
 
 
             builder.append("HTTP/1.1 200 OK\n");
             builder.append("Content-Type: text/html; charset=utf-8\n");
             builder.append("\n");
-            builder.append(branchInfo.getJSONObject(j).getString("name"));
-            builder.append(owner.getString("login"));
-            builder.append(owner.get("id"));
-            response =builder.toString().getBytes();
+            builder.append("name is:" + name);
+            builder.append("login is:" + login);
+            builder.append("id is:"+ id);
+  
            // System.out.println(branchInfo.getJSONObject(j).getJSONObject("owner").getString("login"));
           }
 
